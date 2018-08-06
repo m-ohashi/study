@@ -2,8 +2,8 @@ package time_check.refactoring.input;
 
 public class TimeValidation {
 
-    public static void validate(int hour, int minute){
-        if( !(isValidationForHour(hour)|| isValidationForMinute(minute))) {
+    public static void validate(int hour, int minute) {
+        if (!(isValidationForHour(hour) && isValidationForMinute(minute) && isValidationFor24hour(hour, minute))) {
             throw new RuntimeException("時間の形式がおかしいです");
         }
 
@@ -14,6 +14,13 @@ public class TimeValidation {
     }
 
     private static boolean isValidationForMinute(int minute) {
-        return 0 <= minute  || minute < 60;
+        return 0 <= minute || minute < 60;
+    }
+
+    private static boolean isValidationFor24hour(int hour, int minute) {
+        if (!(hour == 24)) {
+            return true;
+        }
+        return minute == 0;
     }
 }

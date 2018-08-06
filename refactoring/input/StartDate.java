@@ -8,6 +8,9 @@ public class StartDate {
 
     public  StartDate(int hour, int minute) {
         TimeValidation.validate(hour, minute);
+        if(hour == 24) {
+            hour = 0;
+        }
         this.value = LocalTime.of(hour, minute);
     }
 

@@ -8,6 +8,9 @@ public class EndDate {
 
     public EndDate(int hour, int minute) {
         TimeValidation.validate(hour, minute);
+        if(hour == 24) {
+            hour = 0;
+        }
         this.value = LocalTime.of(hour, minute);
     }
 
@@ -24,7 +27,6 @@ public class EndDate {
     }
 
     public boolean isAfter(StartDate startDate){
-        System.out.println("bの終了：" + value + "aの開始：" + startDate.getValue());
         return value.isAfter(startDate.getValue());
     }
 

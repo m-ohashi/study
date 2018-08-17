@@ -17,6 +17,6 @@ public class かかった時間 implements Comparable<かかった時間> {
 
     @Override
     public int compareTo(かかった時間 o) {
-        return this.value - o.value;
+        return (int) (this.value - o.value);
     }
 }

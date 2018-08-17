@@ -24,8 +24,9 @@ public class UserName {
         return value.length() <= 10;
     }
 
-    @Deprecated
-    public String getValue() {
-        return value;
+    public void 表示する(){
+        System.out.println(value);
     }
+
+
 }

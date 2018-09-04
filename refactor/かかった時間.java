@@ -1,13 +1,11 @@
 package random.refactor;
 
-import java.util.concurrent.TimeUnit;
-
 public class かかった時間 implements Comparable<かかった時間> {
 
     private final Long value;
 
-    public かかった時間(Long start, Long end) {
-        this.value = TimeUnit.MILLISECONDS.toSeconds(end - start);
+    public かかった時間(Long value) {
+        this.value = value;
     }
 
     public void 表示する(){

@@ -20,16 +20,16 @@ public class Main {
             文字列.表示する();
 
             //入力を受け取る
-            Long start = System.currentTimeMillis();
+            時間 start = new 時間();
             Scanner scanner = new Scanner(System.in);
             System.out.println("入力してください >");
             文字列 input = new 文字列(scanner.nextLine());
-            Long end = System.currentTimeMillis();
+            時間 end = new 時間();
 
-            かかった時間 かかった時間 = new かかった時間(start,end);
+            かかった時間 かかった時間 = end.かかった時間を計算する(start);
 
             //入力の正誤判断をする
-            if (文字列.判定する(input)) {
+            if (!文字列.判定する(input)) {
                 //正しい場合タイムを表示する
                 かかった時間.表示する();
 
@@ -41,7 +41,6 @@ public class Main {
                 //間違っている場合残念表示する
                 System.out.println("残念");
             }
-
 
             Scanner loopInputScanner = new Scanner(System.in);
             System.out.println("続けますか？ はい:y, いいえ:n >");
